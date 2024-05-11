@@ -17,13 +17,17 @@ body {
 }
 
 .scroll-down {
-	@apply w-3 border border-primary-400 rounded-2xl duration-200 transition-[height,bottom,opacity] absolute bottom-5;
+	@apply w-3 border-2 border-primary-400 rounded-2xl duration-200 transition-[height,bottom,opacity] absolute bottom-5;
 	animation: scroll_animation 2s ease-in-out infinite;
 }
 
 @keyframes scroll_animation {
 	0% {
-		@apply bottom-16 h-4 opacity-100;
+		@apply bottom-5 h-4 opacity-0;
+	}
+
+	10% {
+		@apply opacity-100;
 	}
 
 	40% {
@@ -31,14 +35,14 @@ body {
 	}
 
 	75% {
-		@apply bottom-5 h-4 opacity-100;
+		@apply bottom-16 h-4 opacity-100;
 	}
 
-	95% {
+	98% {
 		@apply opacity-0;
 	}
 
 	100% {
-		@apply bottom-16 h-4;
+		@apply bottom-16 h-4 opacity-0;
 	}
 }

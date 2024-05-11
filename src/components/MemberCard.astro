@@ -1,0 +1,19 @@
+---
+import Image from 'astro/components/Image.astro'
+
+interface Props {
+    name: string,
+    title: string,
+    quote: string
+}
+
+const {name, title, quote} = Astro.props
+---
+
+<div class="p-4 relative rounded-md lg:first:-mb-8 lg:last:-mb-8 min-h-80 w-full">
+    <Image src="/person-placeholder.png" alt="foto orang" width="480" height="720" loading="eager" class="absolute bottom-4 w-11/12 left-1/2 -translate-x-1/2" />
+    <div class="absolute left-1/2 -translate-x-1/2 bottom-4 w-5/6 before:absolute before:w-[115%] before:left-1/2 before:-translate-x-1/2 before:top-1/2 before:-translate-y-1/2 z-40 before:h-[110%] before:bg-primary-400 before:-rotate-2 before:-skew-x-12">
+        <h5 class="font-heading w-fit mb-2 mx-auto tracking-wider text-xl relative z-40">{name}</h5>
+        <p class="text-xs relative z-30 w-full text-center opacity-65">{title}</p>
+    </div>
+</div>

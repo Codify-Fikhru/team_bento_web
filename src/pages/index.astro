@@ -2,6 +2,7 @@
 import Layout from "../components/Layout.astro"
 import BadgeNew from "../components/BadgeNew.astro"
 import Image from "astro/components/Image.astro"
+import MemberCard from "../components/MemberCard.astro"
 ---
 
 <Layout title="Beranda">
@@ -13,7 +14,7 @@ import Image from "astro/components/Image.astro"
 
 		<div id="scrollDown" class="flex items-center w-fit mt-auto justify-center bottom-2 left-2/3 -translate-x-1/2">
 			<div class="scroll-down"></div>
-			<span class="relative text-primary-300 bottom-4 left-2/3 whitespace-nowrap opacity-35">Scroll to Learn More</span>
+			<span class="relative text-primary-300 bottom-4 left-2/3 whitespace-nowrap opacity-50">Scroll to Learn More</span>
 		</div>
 
 		<script>
@@ -34,16 +35,26 @@ import Image from "astro/components/Image.astro"
 		</script>
 	</header>
 
-	<section class="w-4/5 mx-auto min-h-screen">
-		<h2 class="text-4xl lg:text-5xl mb-8 tracking-wide mx-auto text-center w-fit font-bold font-heading">Meet the Team</h2>
+	<section class="w-4/5 mx-auto min-h-screen mb-16 flex items-center">
+		<div class="w-full">
+			<h2 class="text-4xl lg:text-5xl mb-16 tracking-wide mx-auto text-center w-fit font-bold font-heading">Meet the Team</h2>
+
+			<div class="grid justify-items-center h-4/5 grid-cols-1 lg:grid-cols-3 w-5/6 mx-auto gap-20 lg:gap-16">
+				<MemberCard name="Adding" title="Transportation Manager" />
+				<MemberCard name="Fikhru" title="Programmer & Writer" />
+				<MemberCard name="Chandra" title="Project Manager & Lead Programmer" />
+			</div>
+		</div>
 	</section>
 
-	<section class="w-4/5 items-center mx-auto relative min-h-screen grid mb-44 lg:mb-8 grid-cols-1 lg:grid-cols-2">
-		<div class="mb-8 lg:mb-0">
+	<section class="w-5/6 lg:w-4/5 items-center mx-auto relative min-h-screen grid mb-72 lg:mb-8 grid-cols-1 lg:grid-cols-2">
+		<div class="mb-64 lg:mb-0">
 			<h2 class="text-4xl lg:text-5xl mb-8 tracking-wide w-fit font-bold font-heading text-center lg:text-left mx-auto lg:mx-0">Tentang Kami</h2>
-			<p class="max-w-md mx-auto lg:mx-0 text-center lg:text-left lg:max-w-lg leading-relaxed">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum non velit fugiat sunt at modi odit necessitatibus! Laudantium iusto fugiat quam culpa repellat
-				reiciendis repudiandae laboriosam perferendis, esse sequi pariatur?
+			<p class="max-w-full mx-auto lg:mx-0 text-center mb-4 lg:text-left lg:max-w-lg leading-relaxed">
+				Kami adalah tim kecil yang bergerak di bidang pengembangan website dan penyedia jasa joki tugas di Makassar, Sulawesi Selatan. Kami telah melayani beberapa pelanggan baik dari kalangan mahasiswa maupun badan usaha kecil-menengah. Kami juga tergabung dalam komunitas IT dan berkontribusi dalam memberikan informasi serta ilmu-ilmu seputar pemrograman.
+			</p>
+			<p class="max-w-full mx-auto lg:mx-0 text-center lg:text-left lg:max-w-lg leading-relaxed">
+				Untuk sekarang, tujuan kami adalah memperluas koneksi serta memberikan kualitas pelayan terbaik untuk pelanggan dari kalangan manapun. Kami juga masih terus belajar demi meningkatkan kualitas kami.
 			</p>
 		</div>
 
