@@ -1,0 +1,28 @@
+---
+import "./globals.css"
+
+interface Props {
+	title: string
+	description?: string
+}
+
+const { description, title } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} - TeamBento</title>
+		<meta
+			name="description"
+			content={description ||
+				"Selamat datang di website kami! Kami adalah tim kecil yang bergerak di bidang pengembangan website dan penyedia jasa joki tugas di Makassar, Sulawesi Selatan."}
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

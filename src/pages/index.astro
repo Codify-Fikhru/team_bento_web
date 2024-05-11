@@ -1,16 +1,117 @@
 ---
-
+import Layout from "../components/Layout.astro"
+import BadgeNew from "../components/BadgeNew.astro"
+import Image from "astro/components/Image.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Beranda">
+	<header class="h-screen relative flex-col flex items-center justify-center">
+		<div id="title" class="relative mt-auto">
+			<p class="text-sm opacity-50 w-fit">Web Development & Jasa Joki</p>
+			<h1 class="leading-none font-heading text-6xl tracking-wide w-fit font-bold">Team Bento</h1>
+		</div>
+
+		<div id="scrollDown" class="flex items-center w-fit mt-auto justify-center bottom-2 left-2/3 -translate-x-1/2">
+			<div class="scroll-down"></div>
+			<span class="relative text-primary-300 bottom-4 left-2/3 whitespace-nowrap opacity-35">Scroll to Learn More</span>
+		</div>
+
+		<script>
+			const scrollDown = document.getElementById("scrollDown")
+			const title = document.getElementById("title")
+
+			window.addEventListener("scroll", () => {
+				if (scrollY > 5) {
+					scrollDown?.classList.add("hidden")
+					title?.classList.remove("mt-auto")
+					title?.classList.add("my-auto")
+				} else {
+					scrollDown?.classList.remove("hidden")
+					title?.classList.remove("my-auto")
+					title?.classList.add("mt-auto")
+				}
+			})
+		</script>
+	</header>
+
+	<section class="w-4/5 mx-auto min-h-screen">
+		<h2 class="text-5xl mb-8 tracking-wide mx-auto text-center w-fit font-bold font-heading">Meet the Team</h2>
+	</section>
+
+	<section class="w-4/5 items-center mx-auto relative min-h-screen grid mb-8 grid-cols-2">
+		<div>
+			<h2 class="text-5xl mb-8 tracking-wide w-fit font-bold font-heading">Tentang Kami</h2>
+			<p class="max-w-lg leading-relaxed">
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum non velit fugiat sunt at modi odit necessitatibus! Laudantium iusto fugiat quam culpa repellat
+				reiciendis repudiandae laboriosam perferendis, esse sequi pariatur?
+			</p>
+		</div>
+
+		<div class="relative h-2/3">
+			<div class="absolute w-80 aspect-video overflow-hidden rounded-md right-8 top-4">
+				<Image width={720} height={480} loading="eager" class="w-full" src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="foto 1">
+			</div>
+			<div class="absolute w-80 aspect-video overflow-hidden rounded-md right-24 bottom-4">
+				<Image width={720} height={480} loading="eager" class="w-full" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="foto 2">
+			</div>
+		</div>
+	</section>
+
+	<section class="w-4/5 justify-center flex flex-col mx-auto min-h-screen">
+		<h2 class="mx-auto text-center text-5xl mb-4 tracking-wide w-fit font-bold font-heading">Price List</h2>
+		<p class="text-center max-w-lg mb-16 mx-auto">Menerima jasa pengerjaan tugas atau proyek seperti :</p>
+
+		<div class="grid grid-cols-3 mx-auto gap-12 w-11/12">
+			<div class="w-full min-h-96 flex flex-col justify-start items-center">
+				<h5 class="font-heading text-2xl font-bold tracking-wider mb-6 relative before:w-2/3 before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:h-0.5 before:rounded-lg before:bg-primary-400">Web Development</h5>
+
+				<ul class="list-disc list-inside flex flex-col gap-2 w-4/5">
+					<li>Astro.js <BadgeNew /></li>
+					<li>Next.js</li>
+					<li>Sveltekit</li>
+					<li>React.js</li>
+					<li>CodeIgniter</li>
+					<li>Django</li>
+				</ul>
+
+				<div class="mt-auto w-full text-center">
+					<p class="mb-3 text-sm">Harga mulai dari<br/><span class="text-xl font-extrabold">Rp. 75.000</span></p>
+					<a target="_blank" href="https://wa.me/6285394267497?text=Saya ingin membuat website" class="text-center transition-[background,color] duration-300 hover:bg-primary-400 hover:text-light px-4 py-2 border border-primary-400 rounded-md w-full block">Pesan Sekarang</a>
+				</div>
+			</div>
+
+			<div class="w-full min-h-96 flex flex-col justify-start items-center">
+				<h5 class="font-heading text-2xl font-bold tracking-wider mb-6 relative before:w-2/3 before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:h-0.5 before:rounded-lg before:bg-primary-400">Programming</h5>
+
+				<ul class="list-disc list-inside flex flex-col gap-2 w-4/5">
+					<li>C</li>
+					<li>C++</li>
+					<li>Java</li>
+					<li>Kotlin</li>
+					<li>Python</li>
+				</ul>
+
+				<div class="mt-auto w-full text-center">
+					<p class="mb-3 text-sm">Harga mulai dari<br/><span class="text-xl font-extrabold">Rp. 50.000</span></p>
+					<a target="_blank" href="https://wa.me/6285394267497?text=Saya ingin memesan jasa pengerjaan tugas pemrograman" class="text-center transition-[background,color] duration-300 hover:bg-primary-400 hover:text-light px-4 py-2 border border-primary-400 rounded-md w-full block">Pesan Sekarang</a>
+				</div>
+			</div>
+
+			<div class="w-full min-h-96 flex flex-col justify-start items-center">
+				<h5 class="font-heading text-2xl font-bold tracking-wider mb-6 relative before:w-2/3 before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:h-0.5 before:rounded-lg before:bg-primary-400">App Development</h5>
+
+				<ul class="list-disc list-inside flex flex-col gap-2 w-4/5">
+					<li>CLI/Terminal Application</li>
+					<li>Web Application</li>
+					<li>Cross-Platform Application <BadgeNew /></li>
+					<li>Android Application</li>
+				</ul>
+
+				<div class="mt-auto w-full text-center">
+					<p class="mb-3 text-sm">Harga mulai dari<br/><span class="text-xl font-extrabold">Rp. 150.000</span></p>
+					<a target="_blank" href="https://wa.me/6285394267497?text=Saya ingin membuat aplikasi" class="text-center transition-[background,color] duration-300 hover:bg-primary-400 hover:text-light px-4 py-2 border border-primary-400 rounded-md w-full block">Pesan Sekarang</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;800&family=Lato:wght@300;400;700&display=swap");
+
+body {
+	@apply font-body bg-bg-600 text-light;
+}
+
+::-webkit-scrollbar {
+	@apply w-1;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-bg-500 rounded-3xl;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-bg-600;
+}
+
+.scroll-down {
+	@apply w-3 border border-primary-400 rounded-2xl duration-200 transition-[height,bottom,opacity] absolute bottom-5;
+	animation: scroll_animation 2s ease-in-out infinite;
+}
+
+@keyframes scroll_animation {
+	0% {
+		@apply bottom-16 h-4 opacity-100;
+	}
+
+	40% {
+		@apply bottom-5 h-16;
+	}
+
+	75% {
+		@apply bottom-5 h-4 opacity-100;
+	}
+
+	95% {
+		@apply opacity-0;
+	}
+
+	100% {
+		@apply bottom-16 h-4;
+	}
+}
